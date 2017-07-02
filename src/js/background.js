@@ -772,6 +772,7 @@ function startBackgroundListeners() {
   chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if(changeInfo.status == "loading") {
       badger.refreshIconAndContextMenu(tab);
+      badger.updateBadge(tabId);
     }
   });
 
